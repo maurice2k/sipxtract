@@ -25,13 +25,15 @@ Usage:
   sipxtract [OPTIONS] [Call-Id...]
 
 Application Options:
-      --in=        Source PCAP file (default: STDIN)
-      --out=       Output PCAP file (default: STDOUT)
-  -p, --port=      SIP port filter (multiple ports allowed) (default: 5060)
-      --skip-rtp   Skip RTP media packets
-      --full-scan  Do a full scan even though given calls seem to be finished
-  -v, --verbose    Show verbose information
-      --version    Show sipxtract version
+      --in=           Source PCAP file (default: STDIN)
+      --out=          Output PCAP file (default: STDOUT)
+  -p, --port=         SIP port filter (multiple ports allowed) (default: 5060)
+      --skip-rtp      Skip RTP media packets
+      --rtp-tail=     Seconds of RTP to capture after call ends (default: 10)
+      --rtp-filter-ip Filter RTP by IPs from SDP connection lines
+      --full-scan     Do a full scan even though given calls seem to be finished
+  -v, --verbose       Show verbose information
+      --version       Show sipxtract version
 
 Help Options:
   -h, --help       Show this help message
