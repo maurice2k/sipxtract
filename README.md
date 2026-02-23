@@ -7,9 +7,23 @@ After extraction you can proceed with your normal workflow and load your files i
 
 
 ## Installation
+
+### Quick install (recommended)
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/maurice2k/sipxtract/main/install.sh | sh
 ```
-$ go install github.com/maurice2k/sipxtract@latest
-$ $GOPATH/bin/sipxtract -h
+
+Installs to `/usr/local/bin` by default. To install elsewhere:
+
+```sh
+INSTALL_DIR=~/.local/bin curl -fsSL https://raw.githubusercontent.com/maurice2k/sipxtract/main/install.sh | sh
+```
+
+### From source (go install)
+
+```sh
+go install github.com/maurice2k/sipxtract@latest
 ```
 
 ## Sample usage
@@ -32,7 +46,7 @@ Application Options:
       --rtp-tail=     Seconds of RTP to capture after call ends (default: 10)
       --rtp-filter-ip Filter RTP by IPs from SDP connection lines
       --full-scan     Do a full scan even though given calls seem to be finished
-  -v, --verbose       Show verbose information
+  -v, --verbose       Show verbose information (use -vv to also dump raw SIP messages)
       --version       Show sipxtract version
 
 Help Options:

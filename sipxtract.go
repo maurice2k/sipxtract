@@ -296,6 +296,8 @@ func main() {
 						methodOrResponse = "< " + strconv.Itoa(sip.ResponseCode) + " " + sip.ResponseStatus
 					}
 					verboseOut(1, "%s: [%s] %s -- from %s:%d to %s:%d\n", sip.GetCallID(), m.Timestamp.Local().Format(time.RFC3339), methodOrResponse, srcIPStr, udpSrcPort, dstIPStr, udpDstPort)
+					sipRaw := append(sip.LayerContents(), sip.Payload()...)
+					verboseOut(2, "%s\n\n", bytes.TrimRight(sipRaw, "\r\n"))
 
 					if sip.GetFirstHeader("content-type") == "application/sdp" {
 						sdpPayload := string(sip.Payload())
